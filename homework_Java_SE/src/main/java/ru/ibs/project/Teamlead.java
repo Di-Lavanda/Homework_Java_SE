@@ -9,15 +9,15 @@ public class Teamlead extends Employee implements Manager{
     }
     @Override
     public int salary(){
-        return work_time*rate;
+        return workTime*rate;
     }
 
-    private double self_salary(){
+    private double selfSalary(){
         return salary()*bonus;
     }
 
     @Override
-    public void team_management() {
+    public void teamManagement() {
         System.out.println("Team! We need work harder!");
     }
 

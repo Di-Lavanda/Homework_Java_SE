@@ -11,10 +11,10 @@ public class Trainee extends Employee{
 
     @Override
     public int salary(){
-        return work_time*rate;
+        return workTime*rate;
     }
 
-    private double self_salary(){
+    private double selfSalary(){
         return salary()*bonus;
     }
 
