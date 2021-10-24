@@ -1,9 +1,19 @@
 package ru.ibs.project;
 
 public abstract class Employee {
+    protected String name;
     protected int workTime;
     protected int rate;
-    public abstract int salary();
+
+    public abstract double salary();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getWorkTime() {
         return workTime;

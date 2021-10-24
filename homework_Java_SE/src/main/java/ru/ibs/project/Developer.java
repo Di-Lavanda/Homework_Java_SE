@@ -1,36 +1,29 @@
 package ru.ibs.project;
 
 public class Developer extends Employee{
-    private double bonus;
-    private String name;
-
-    public Developer(double bonus, String name){
-        this.bonus = bonus;
-        this.name = name;
-    }
+    private int completedTaskCount;
+    private String rang;
 
     @Override
-    public int salary() {
-        return workTime*rate;
+    public double salary() {
+        return workTime*rate*completedTaskCount;
     }
 
-    private double selfSalary(){
-        return salary()*bonus;
+    private void performTasks(){}
+
+    public int getCompletedTaskCount() {
+        return completedTaskCount;
     }
 
-    public double getBonus() {
-        return bonus;
+    public void setCompletedTaskCount(int completedTaskCount) {
+        this.completedTaskCount = completedTaskCount;
     }
 
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
+    public String getRang() {
+        return rang;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setRang(String rang) {
+        this.rang = rang;
     }
 }

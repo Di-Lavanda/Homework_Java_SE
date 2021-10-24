@@ -1,36 +1,28 @@
 package ru.ibs.project;
 
 public class Trainee extends Employee{
-    private double bonus;
-    private String name;
-
-    public Trainee(double bonus, String name){
-        this.bonus = bonus;
-        this.name = name;
-    }
-
+    private double studyLevel;
+    private long questionsForTeamleadCount;
     @Override
-    public int salary(){
-        return workTime*rate;
+    public double salary(){
+        return workTime*rate*studyLevel;
     }
 
-    private double selfSalary(){
-        return salary()*bonus;
+    private void orderPizzaForTeam(){};
+
+    public double getStudyLevel() {
+        return studyLevel;
     }
 
-    public double getBonus() {
-        return bonus;
+    public void setStudyLevel(double studyLevel) {
+        this.studyLevel = studyLevel;
     }
 
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
+    public long getQuestionsForTeamleadCount() {
+        return questionsForTeamleadCount;
     }
 
-    public String getName() {
-        return name;
+    public void setQuestionsForTeamleadCount(long questionsForTeamleadCount) {
+        this.questionsForTeamleadCount = questionsForTeamleadCount;
     }
-
-    public void setName(String name) {this.name = name;    }
-
-
 }

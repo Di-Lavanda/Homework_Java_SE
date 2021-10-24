@@ -1,19 +1,11 @@
 package ru.ibs.project;
 
 public class Teamlead extends Employee implements Manager{
-    private double bonus;
-    private String name;
-    public Teamlead(double bonus, String name){
-        this.bonus = bonus;
-        this.name = name;
-    }
+    private int countOfDevsInTeam;
+    private int countOfTrainee;
     @Override
-    public int salary(){
-        return workTime*rate;
-    }
-
-    private double selfSalary(){
-        return salary()*bonus;
+    public double salary(){
+        return workTime*rate*countOfTrainee;
     }
 
     @Override
@@ -21,19 +13,23 @@ public class Teamlead extends Employee implements Manager{
         System.out.println("Team! We need work harder!");
     }
 
-    public double getBonus() {
-        return bonus;
+    private void teachTrainee(){
+
     }
 
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
+    public int getCountOfDevsInTeam() {
+        return countOfDevsInTeam;
     }
 
-    public String getName() {
-        return name;
+    public void setCountOfDevsInTeam(int countOfDevsInTeam) {
+        this.countOfDevsInTeam = countOfDevsInTeam;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getCountOfTrainee() {
+        return countOfTrainee;
+    }
+
+    public void setCountOfTrainee(int countOfTrainee) {
+        this.countOfTrainee = countOfTrainee;
     }
 }
