@@ -7,29 +7,29 @@ import java.util.List;
 public class App {
     public static void main(String[] args){
 
-        HashSet<Object> Set = new HashSet<Object>();
-        Developer Oleg = new Developer();
-        Oleg.setName("Олег");
-        Oleg.setRate(400);
-        Oleg.setWorkTime(40);
-        Oleg.setCompletedTaskCount(4);
-        Oleg.setRang("Middle");
-        Teamlead Denis = new Teamlead();
-        Denis.setName("Денис");
-        Denis.setRate(800);
-        Denis.setWorkTime(30);
-        Denis.setCountOfTrainee(1);
-        Denis.setCountOfDevsInTeam(3);
-        Trainee Vlad = new Trainee();
-        Vlad.setName("Влад");
-        Vlad.setRate(100);
-        Vlad.setWorkTime(20);
-        Vlad.setQuestionsForTeamleadCount(1000);
-        Vlad.setStudyLevel(0.7);
-        Set.add(Oleg);
-        Set.add(Denis);
-        Set.add(Vlad);
-        List<Object> List = new ArrayList<Object>(Set);
+        HashSet<Object> set = new HashSet<Object>();
+        Developer oleg = new Developer();
+        oleg.setName("Олег");
+        oleg.setRate(400);
+        oleg.setWorkTime(40);
+        oleg.setCompletedTaskCount(4);
+        oleg.setRang("Middle");
+        Teamlead denis = new Teamlead();
+        denis.setName("Денис");
+        denis.setRate(800);
+        denis.setWorkTime(30);
+        denis.setCountOfTrainee(1);
+        denis.setCountOfDevsInTeam(3);
+        Trainee vlad = new Trainee();
+        vlad.setName("Влад");
+        vlad.setRate(100);
+        vlad.setWorkTime(20);
+        vlad.setQuestionsForTeamleadCount(1000);
+        vlad.setStudyLevel(0.7);
+        set.add(oleg);
+        set.add(denis);
+        set.add(vlad);
+        List<Object> list = new ArrayList<Object>(set);
 
     }
 }
