@@ -7,7 +7,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args){
 
-        HashSet<Object> set = new HashSet<Object>();
+        HashSet<Employee> set = new HashSet<Employee>();
         Developer oleg = new Developer();
         oleg.setName("Олег");
         oleg.setRate(400);
@@ -29,7 +29,7 @@ public class App {
         set.add(oleg);
         set.add(denis);
         set.add(vlad);
-        List<Object> list = new ArrayList<Object>(set);
+        List<Employee> list = new ArrayList<Employee>(set);
 
     }
 }
