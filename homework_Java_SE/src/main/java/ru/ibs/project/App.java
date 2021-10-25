@@ -7,6 +7,25 @@ import java.util.List;
 public class App {
     public static void main(String[] args){
 
+        Employee barista = new Employee() {   //высчитывает премию по коэффициенту
+            public int drinksMadeCount; //?
+            @Override
+            public double salary() {
+                return workTime*rate*drinksMadeCount;
+            }
+            public void makeCoffee(){   //?
+                System.out.println("barista makes coffee for you");
+            }
+
+            public int getDrinksMadeCount() { //?
+                return drinksMadeCount;
+            }
+
+            public void setDrinksMadeCount(int drinksMadeCount) { //?
+                this.drinksMadeCount = drinksMadeCount;
+            }
+        };
+        barista.salary();
         HashSet<Employee> set = new HashSet<Employee>();
         Developer oleg = new Developer();
         oleg.setName("Олег");
