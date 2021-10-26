@@ -7,8 +7,8 @@ import java.util.stream.Stream;
 public class App {
     public static void main(String[] args){
 
-        Employee barista = new Employee() {   //высчитывает премию по коэффициенту
-            public int drinksMadeCount; //?
+        var barista = new Employee() {
+            public int drinksMadeCount; // количество сделанных напитков
             @Override
             public double salary() {
                 return workTime*rate*drinksMadeCount;
@@ -25,7 +25,9 @@ public class App {
                 this.drinksMadeCount = drinksMadeCount;
             }
         };
+        barista.setDrinksMadeCount(12);
         barista.salary();
+
         HashSet<Employee> set = new HashSet<Employee>();
 
         Developer oleg = new Developer();
@@ -93,8 +95,12 @@ public class App {
         set.add(lena);
         set.add(pavel);
         List<Employee> list = new ArrayList<Employee>(set);
+        List<Employee> DevAndLeadList =
+                set.stream().filter(position -> position instanceof Developer || position instanceof Teamlead)
+                        .collect(Collectors.toCollection(ArrayList::new));
+        Map<String, List<Employee>> map = DevAndLeadList.stream().collect(Collectors.groupingBy(employee -> employee instanceof Developer ? "dev":"tl"));
+        System.out.println(map);
 
-        Map<String, List<Employee>>devAndLeadMap = set.stream().filter(employee -> employee instanceof Teamlead || employee instanceof Developer).collect(Collectors.toMap(k -> k instanceof Teamlead ? "Teamleads" : "Developers", Collections::singletonList, (u,v) -> Stream.concat(u.stream(), v.stream()).collect(Collectors.toList())));
-        devAndLeadMap.forEach((k, v) -> System.out.println("Key: " + k + " Value: " + v));
+
     }
 }
