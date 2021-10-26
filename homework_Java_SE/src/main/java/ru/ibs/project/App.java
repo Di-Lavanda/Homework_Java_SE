@@ -94,12 +94,10 @@ public class App {
         set.add(ivan);
         set.add(lena);
         set.add(pavel);
+
         List<Employee> list = new ArrayList<Employee>(set);
-        List<Employee> DevAndLeadList =
-                set.stream().filter(position -> position instanceof Developer || position instanceof Teamlead)
-                        .collect(Collectors.toCollection(ArrayList::new));
-        Map<String, List<Employee>> map = DevAndLeadList.stream().collect(Collectors.groupingBy(employee -> employee instanceof Developer ? "dev":"tl"));
-        System.out.println(map);
+        List<Employee> listFilter = list.stream().filter(employee -> employee.getRate() > 200).collect(Collectors.toList());
+        listFilter.stream().map(employee -> employee.getName()).forEach(name -> System.out.println(name));
 
 
     }
